@@ -22,7 +22,7 @@ function App() {
     return (
         <Root>
             <Header />
-            <Container maxWidth={false}>
+            <Container>
                 <Intro/>
                 <LinkGrid/>
                 <ScenarioList/>

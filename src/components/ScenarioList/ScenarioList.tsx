@@ -1,5 +1,6 @@
 import React from "react";
 import {Box, Grid, Typography} from "@material-ui/core";
+// @ts-ignore
 import Scenarios from "../../data/scenarios";
 import Scenario, {ScenarioT} from "components/ScenarioList/Scenario/Scenario";
 import {makeStyles} from "@material-ui/core/styles";

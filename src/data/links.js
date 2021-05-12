@@ -1,6 +1,4 @@
-import {LinkCardT} from "components/LinkCard/LinkCard";
-
-const Links: LinkCardT[] = [
+const Links = [
   {
     "image": "img/logo.svg",
     "name": "Docs",

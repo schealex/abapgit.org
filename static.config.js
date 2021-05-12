@@ -1,12 +1,28 @@
-import { makeStyles } from '@material-ui/core/styles';
 import path from 'path'
 import React from 'react';
+import algoliasearch from 'algoliasearch'
+import Scenarios from './src/data/scenarios'
+
+require('dotenv').config()
 
 // Typescript support in static.config.js is not yet supported, but is coming in a future update!
+
+const client = algoliasearch(process.env.applicationID, process.env.adminApiKey)
+
+const addSearchObjects = (indexName, data) => {
+    const index = client.initIndex(indexName)
+    index.saveObjects(data, { autoGenerateObjectIDIfNotExist: true }).catch((err) => {
+        if (err) {
+            console.error(err)
+        }
+    })
+}
+addSearchObjects('abapGit.org', Scenarios);
 
 export default {
     entry: path.join(__dirname, 'src', 'index.tsx'),
     plugins: [
+        '@elbstack/react-static-plugin-dotenv',
         'react-static-plugin-typescript',
         [
             require.resolve('react-static-plugin-source-filesystem'),
@@ -14,7 +30,6 @@ export default {
                 location: path.resolve('./src/pages'),
             },
         ],
-        require.resolve('react-static-plugin-reach-router'),
         require.resolve('react-static-plugin-sitemap'),
         'jss-provider',
     ],

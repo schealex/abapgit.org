@@ -1,5 +1,6 @@
 import React from 'react';
 import LinkCard, {LinkCardT} from "components/LinkCard/LinkCard";
+// @ts-ignore
 import Links from "../../data/links";
 import {Grid} from "@material-ui/core";
 

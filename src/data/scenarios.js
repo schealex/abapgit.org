@@ -1,6 +1,4 @@
-import {ScenarioT} from "components/ScenarioList/Scenario/Scenario";
-
-const Scenarios: ScenarioT[] = [
+const Scenarios = [
     {
         name: 'My-Awesome-Scenario',
         description: 'Awesome project description',
